@@ -12,10 +12,9 @@ export const initialAppState: IApp = {
 
 export const reducer = createReducer(
   initialAppState as IApp,
-  on(addTitle, (state, { title }) => ({ ...(state as IApp), title })),
+  on(addTitle, (state, { title }) => ({ ...state, title })),
 );
 
 export function AppReducer(state: IApp, action: Action): IApp {
   return reducer(state, action) as IApp;
 }
-

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { createSelector, select, Store } from '@ngrx/store';
 
-import { IApp, IAppState } from '../../store';
 import { Observable } from 'rxjs';
+import { IAppState } from '../../store';
+import { IApp } from '../title/title.reducer';
 
 @Component({
   selector: 'app-data',

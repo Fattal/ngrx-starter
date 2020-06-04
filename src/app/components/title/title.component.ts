@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 
-import {IAppState} from '../../store';
-import {addTitle} from './title.actions';
+import { IAppState } from '../../store';
+import { addTitle } from './title.actions';
 
 @Component({
   selector: 'app-title',
