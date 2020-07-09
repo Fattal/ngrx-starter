@@ -16,6 +16,9 @@
       "dom"
     ]
   },
+  "include": [
+    "./src/app/"
+  ],
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { createSelector, select, Store } from '@ngrx/store';
-
+import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+
 import { IAppState } from '../../store';
-import { IApp } from '../title/title.reducer';
+import selectors from './store/data.selectors';
 
 @Component({
   selector: 'app-data',
@@ -17,11 +17,6 @@ export class DataComponent implements OnInit {
   constructor(private store: Store<IAppState>) {}
 
   ngOnInit(): void {
-    this.title$ = this.store.pipe(select(selectTitle));
+    this.title$ = this.store.pipe(select(selectors.selectTitle));
   }
 }
-
-export const selectTitle = createSelector(
-  (state: IAppState) => state.AppState,
-  (state: IApp) => state.title,
-);

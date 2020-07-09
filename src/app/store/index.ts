@@ -1,15 +1,15 @@
 import { ActionReducerMap, MetaReducer } from '@ngrx/store';
 
-import { AppReducer, IApp } from '../components/title/title.reducer';
+import { AppReducer, ITitle } from '../components/title/store/title.reducer';
 
 
 export interface IAppState {
-  AppState: IApp;
+  TitleState: ITitle;
   // other
 }
 
 export const reducers: ActionReducerMap<IAppState> = {
-  AppState: AppReducer,
+  TitleState: AppReducer,
   // others reducers
 };
 
