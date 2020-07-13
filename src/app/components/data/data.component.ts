@@ -3,7 +3,7 @@ import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { IAppState } from '../../store';
-import selectors from './store/data.selectors';
+import selectors from '../title/store/title.selectors';
 
 @Component({
   selector: 'app-data',
