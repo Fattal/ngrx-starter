@@ -3,7 +3,7 @@ import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { IAppState } from '../../store';
-import selectors from '../title/store/title.selectors';
+import { selectTitle } from '../title/store/title.selectors';
 
 @Component({
   selector: 'app-data',
@@ -17,6 +17,6 @@ export class DataComponent implements OnInit {
   constructor(private store: Store<IAppState>) {}
 
   ngOnInit(): void {
-    this.title$ = this.store.pipe(select(selectors.selectTitle));
+    this.title$ = this.store.pipe(select(selectTitle));
   }
 }

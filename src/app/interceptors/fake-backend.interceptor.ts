@@ -1,11 +1,12 @@
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
 import { Injectable, Injector } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { LoadedData } from '../api/data/data.service';
 
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
-  fake = {
-    data: 'chidume nnamdi',
+  fake: LoadedData = {
+    title: 'chidume nnamdi',
   };
 
   constructor() {}

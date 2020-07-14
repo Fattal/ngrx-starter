@@ -1,6 +1,6 @@
 import {Action, createReducer, on} from '@ngrx/store';
+import { setDataAction } from './title.actions';
 
-import actions from './title.actions';
 
 export interface ITitle {
   title: string;
@@ -12,7 +12,7 @@ export const initialAppState: ITitle = {
 
 export const reducer = createReducer(
   initialAppState as ITitle,
-  on(actions.setData, (state, { title }) => ({ ...state, title })),
+  on(setDataAction, (state, { title }) => ({ ...state, title })),
 );
 
 export function AppReducer(state: ITitle, action: Action): ITitle {

@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { provideMockStore, MockStore } from '@ngrx/store/testing';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
 
 import { DataComponent } from './data.component';
 
@@ -10,10 +10,12 @@ describe('DataComponent', () => {
   const initialState = { AppState: { title: 'title' } };
 
   beforeEach(async(() => {
+    const state = { title: 'title' };
+
     TestBed.configureTestingModule({
       declarations: [ DataComponent ],
       providers: [
-        provideMockStore({ initialState }),
+        provideMockStore({ initialState: state }),
       ],
     })
     .compileComponents();

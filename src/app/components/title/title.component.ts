@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
 
-import { IAppState } from '../../store';
-import actions from './store/title.actions';
+import { TitleService } from './title.service';
 
 @Component({
   selector: 'app-title',
@@ -13,15 +11,14 @@ export class TitleComponent implements OnInit {
 
   private count = 0;
 
-  constructor(private store: Store<IAppState>) { }
+  constructor(private service: TitleService) { }
 
   ngOnInit(): void {
   }
 
-  addTitle(title) {
+  addTitle(text: string) {
     this.count++;
-    this.store.dispatch(
-      actions.loadData({ title: title + '-' + this.count })
-    );
+    const title = text + '-' + this.count;
+    this.service.loadData(title);
   }
 }

@@ -1,5 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
+
+export interface LoadedData {
+  title: string;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +16,7 @@ export class DataService {
     private http: HttpClient,
   ) { }
 
-  public loadData() {
-    return this.http.get('/data');
+  public loadData(): Observable<LoadedData> {
+    return this.http.get<LoadedData>('/data');
   }
 }
